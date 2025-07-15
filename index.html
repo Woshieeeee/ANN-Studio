@@ -2,58 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ANN Studio – Attacker TV Edition</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ANN Studios</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
   <nav>
-    <h1>ANN Studio</h1>
+    <h1>ANN Studios</h1>
     <button id="homeBtn">Home</button>
   </nav>
 
   <div id="searchContainer">
-    <input
-      id="searchInput"
-      type="text"
-      placeholder="Search for movies and hit Enter…"
-    />
+    <input id="searchInput" type="text" placeholder="Search for movies and hit Enter…" />
   </div>
 
-  <section id="movieGrid"></section>
+  <div id="traysContainer"></div>
 
   <div id="movieModal">
-    <button id="backBtn">← Back</button>
-    <div class="modal-content">
-      <img id="modalPoster" src="" alt="Poster" />
-      <div class="modal-info">
-        <div class="modal-header">
-          <h2 id="modalTitle"></h2>
-          <button class="watch-now">▶ Watch now</button>
-        </div>
-        <div class="tags">
-          <span class="tag">🎮 Trailer</span>
-          <span class="tag">HD</span>
-          <span class="tag imdb">IMDB: <span id="imdbScore">N/A</span></span>
-        </div>
-        <p id="modalSynopsis"></p>
-        <div class="meta">
-          <p><strong>Released:</strong> <span id="releaseDate"></span></p>
-          <p><strong>Duration:</strong> <span id="runtime"></span></p>
-          <p><strong>Genre:</strong> <span id="genres"></span></p>
-          <p><strong>Country:</strong> <span id="country"></span></p>
-          <p><strong>Cast:</strong> <span id="cast"></span></p>
-        </div>
-        <div class="vote">
-          <button class="like-btn">👍 Like</button>
-          <button class="dislike-btn">👎 Dislike</button>
-        </div>
-        <button class="favorite">+ Add to favorite</button>
-        <iframe id="modalTrailer" allowfullscreen></iframe>
-      </div>
-    </div>
     <span class="close-btn" onclick="closeModal()">✖</span>
+    <div class="modal-content">
+      <h2 id="modalTitle"></h2>
+      <p id="modalSynopsis"></p>
+      <iframe id="modalTrailer" allowfullscreen></iframe>
+      <div id="modalDetails"></div>
+    </div>
   </div>
 
   <script src="script.js"></script>

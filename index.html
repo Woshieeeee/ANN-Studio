@@ -3,22 +3,44 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ANN Studios</title>
+  <title>Movie Studios</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
   <nav>
-    <h1>ANN Studios</h1>
-    <button id="homeBtn">Home</button>
+    <div class="nav-container">
+      <h1 class="logo">Movie Studio</h1>
+      <div class="nav-actions">
+        <button id="homeBtn" class="nav-button">Home</button>
+        <div class="genre-dropdown">
+          <button class="genre-btn">Genre ▼</button>
+          <div class="genre-list">
+            <div data-genre="28">Action</div>
+            <div data-genre="35">Comedy</div>
+            <div data-genre="18">Drama</div>
+            <div data-genre="10749">Romance</div>
+            <div data-genre="10751">Family</div>
+            <div data-genre="10402">Music</div>
+            <div data-genre="10770">TV Movie</div>
+            <div data-genre="10759">OPM</div>
+          </div>
+        </div>
+      </div>
+    </div>
   </nav>
 
   <div id="searchContainer">
     <input id="searchInput" type="text" placeholder="Search for movies and hit Enter…" />
   </div>
 
-  <div id="traysContainer"></div>
+  <div id="traysContainer">
+    </div>
+
+    <div class="scroll-tray" id="tray">
+    </div>
+  </div>
 
   <div id="movieModal">
     <span class="close-btn" onclick="closeModal()">✖</span>
@@ -30,6 +52,21 @@
     </div>
   </div>
 
+  <script>
+    function scrollTray(direction) {
+      const tray = document.getElementById('tray');
+      const scrollAmount = 240;
+      tray.scrollBy({
+        left: direction * scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+
+    function closeModal() {
+      document.getElementById('movieModal').style.display = 'none';
+    }
+
+  </script>
   <script src="script.js"></script>
 </body>
 </html>
